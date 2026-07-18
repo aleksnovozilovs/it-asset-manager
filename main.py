@@ -6,7 +6,8 @@ def show_menu():
     print("1. Show Devices")
     print("2. Add Device")
     print("3. Search Device")
-    print("4. Exit ")
+    print("4. Delete Device")
+    print("5. Exit ")
     print()
     option = input("Choose an option: ")
     return option
@@ -39,14 +40,52 @@ def search_device(devices):
         print()
         print("Device not found")
         print()
-        
+
+def delete_device(devices):
+    if not devices:
+        print()
+        print("No devices availible to delete")
+        print()
+        return
+    for index, device in enumerate(devices):
+        print(f"{index + 1}.{device.name}")
+    print()
+    try:
+        device_number = int(input("Choose device number: "))
+        if 0 <= (device_number - 1) < len(devices):
+            selected_device = devices[device_number - 1]
+            print()
+            confirm = input(f"Delete {selected_device.name}? (y/n): ").casefold()
+            if confirm == "y":
+                devices.remove(selected_device)
+                print("Device deleted.")
+                print()
+            elif confirm == "n":
+                print("Deletion cancelled.")
+                print()
+            else:
+                print()
+                print("Invalid entry")
+                print("Returning to main menu...")
+                print()
+        else: 
+            print()
+            print("Invalid entry")
+            print("Returning to main menu...")
+            print()
+
+    except ValueError:
+        print()
+        print("Invalid entry")
+        print("Returning to main menu...")
+        print()
         
 devices = [
-    Device("Aleks laptop", "Apple", "M4", "24GB"), 
+    Device("Aleks laptop", "Apple", "M4", "24GB"),
     Device("Reception PC", "Dell", "Intel i5 Ultra", "16GB")
 ]
 option = ""
-while option != "4":
+while option != "5":
     option = show_menu()
     if option == "1":
          show_devices(devices)
@@ -55,6 +94,8 @@ while option != "4":
     elif option == "3":
          search_device(devices)
     elif option == "4":
+        delete_device(devices)
+    elif option == "5":
         print()
         print("Goodbye!")
         print()
