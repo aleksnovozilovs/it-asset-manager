@@ -6,7 +6,7 @@ def load_devices():
         lines = file.readlines()
         for line in lines:
             line = line.strip()
-            name, brand, cpu, ram = line.split(",")
+            name, brand, cpu, ram = [value.strip() for value in line.split(",")]
             device = Device(name, brand, cpu, ram)
             devices.append(device)
     return devices
