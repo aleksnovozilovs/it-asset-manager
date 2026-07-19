@@ -1,5 +1,21 @@
 from device import Device
 
+def load_devices():
+    devices = []
+    with open("devices.txt", "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            line = line.strip()
+            name, brand, cpu, ram = line.split(",")
+            device = Device(name, brand, cpu, ram)
+            devices.append(device)
+    return devices
+
+def save_devices(devices):
+    with open("devices.txt", "w") as file:
+        for device in devices:
+            file.write(f"{device.name},{device.brand},{device.cpu},{device.ram}\n")
+
 def show_menu():
     print("===== IT Asset Manager =====")
     print()
@@ -21,6 +37,7 @@ def add_device(devices):
                                                      input("Enter devices CPU: "),
                                                             input("Enter device RAM: "))
     devices.append(new_device)
+    save_devices(devices)
     print()
     print("Device added: ")
     print()
@@ -58,6 +75,7 @@ def delete_device(devices):
             confirm = input(f"Delete {selected_device.name}? (y/n): ").casefold()
             if confirm == "y":
                 devices.remove(selected_device)
+                save_devices(devices)
                 print("Device deleted.")
                 print()
             elif confirm == "n":
@@ -80,10 +98,7 @@ def delete_device(devices):
         print("Returning to main menu...")
         print()
         
-devices = [
-    Device("Aleks laptop", "Apple", "M4", "24GB"),
-    Device("Reception PC", "Dell", "Intel i5 Ultra", "16GB")
-]
+devices = load_devices()
 option = ""
 while option != "5":
     option = show_menu()
