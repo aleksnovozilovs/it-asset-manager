@@ -4,3 +4,4 @@ Meeting Room PC,Lenovo,Intel i3,8
 Reception One,Dell,Intel i5,16
 Reception 2,Microsoft,Snapdragon,16
 Tanas Mac,Apple,M4,16
+Server,N/A,Intel i7,64

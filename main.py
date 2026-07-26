@@ -7,11 +7,10 @@ from device_manager import (
     delete_device,
     edit_device)
 
-def main():
+def main() -> None:
     devices = load_devices()
-    option = ""
 
-    while option != "6":
+    while True:
         option = show_main_menu()
 
         if option == "1":
@@ -28,8 +27,10 @@ def main():
             print()
             print("Goodbye!")
             print()
+            break
         else:
-            print("Incorrect option, please restart the programm and try again")
+            print()
+            print("Incorrect option, please try again")
             print()
             
 if __name__ == "__main__":

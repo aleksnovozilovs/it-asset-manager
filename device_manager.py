@@ -38,11 +38,7 @@ def show_devices(devices):
             print("Incorrect option, please try again")
             print()     
 
-
-    
-    
-
-def add_device(devices):
+def add_device(devices) -> None:
     name = input("Enter device name: ")
     brand = input("Enter device brand: ")
     cpu = input("Enter devices CPU: ")
@@ -62,7 +58,6 @@ def add_device(devices):
     print()            
     new_device.display_info()
 
-        
 def search_device(devices):
     user_input = input("Enter device name: ").casefold()
     found = False
