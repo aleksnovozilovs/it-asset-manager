@@ -12,5 +12,5 @@ class Device:
         print(f"Name: {self.name}")
         print(f"Brand: {self.brand}")
         print(f"CPU: {self.cpu}")
-        print(f"RAM: {self.ram}")
+        print(f"RAM: {self.ram} GB")
         print()

@@ -1,3 +1,6 @@
-Aleks PC,Apple,M4,24GB
-Meeting Room PC,HP,Intel i5,36GB
-Reception One,Dell,Intel i7,16GB
+Aleks PC,Dell,Intel i7,16
+Aleks Mac,Apple,M4,24
+Meeting Room PC,Lenovo,Intel i3,8
+Reception One,Dell,Intel i5,16
+Reception 2,Microsoft,Snapdragon,16
+Tanas Mac,Apple,M4,16

@@ -1,4 +1,5 @@
-from storage import load_devices, save_devices
+from menus import show_main_menu
+from storage import load_devices
 from device_manager import (
     show_devices,
     add_device,
@@ -6,25 +7,12 @@ from device_manager import (
     delete_device,
     edit_device)
 
-def show_menu():
-    print("===== IT Asset Manager =====")
-    print()
-    print("1. Show Devices")
-    print("2. Add Device")
-    print("3. Search Device")
-    print("4. Delete Device")
-    print("5. Edit Device")
-    print("6. Exit ")
-    print()
-    option = input("Choose an option: ")
-    return option
-
 def main():
     devices = load_devices()
     option = ""
 
     while option != "6":
-        option = show_menu()
+        option = show_main_menu()
 
         if option == "1":
             show_devices(devices)

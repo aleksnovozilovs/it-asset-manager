@@ -7,7 +7,7 @@ def load_devices():
         for line in lines:
             line = line.strip()
             name, brand, cpu, ram = [value.strip() for value in line.split(",")]
-            device = Device(name, brand, cpu, ram)
+            device = Device(name, brand, cpu, int(ram))
             devices.append(device)
     return devices
 
