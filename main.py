@@ -3,7 +3,8 @@ from device_manager import (
     show_devices,
     add_device,
     search_device,
-    delete_device)
+    delete_device,
+    edit_device)
 
 def show_menu():
     print("===== IT Asset Manager =====")
@@ -12,7 +13,8 @@ def show_menu():
     print("2. Add Device")
     print("3. Search Device")
     print("4. Delete Device")
-    print("5. Exit ")
+    print("5. Edit Device")
+    print("6. Exit ")
     print()
     option = input("Choose an option: ")
     return option
@@ -21,7 +23,7 @@ def main():
     devices = load_devices()
     option = ""
 
-    while option != "5":
+    while option != "6":
         option = show_menu()
 
         if option == "1":
@@ -33,6 +35,8 @@ def main():
         elif option == "4":
             delete_device(devices)
         elif option == "5":
+            edit_device(devices)
+        elif option == "6":
             print()
             print("Goodbye!")
             print()

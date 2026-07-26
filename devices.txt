@@ -1,2 +1,3 @@
-Aleks laptop,Apple,M4,24GB
-Meeting Room PC,HP,i3,16GB
+Aleks PC,Apple,M4,24GB
+Meeting Room PC,HP,Intel i5,36GB
+Reception One,Dell,Intel i7,16GB
